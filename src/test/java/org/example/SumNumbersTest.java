@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
-
 class SumNumbersTest {
 
     SumNumbers sumNumbers;
@@ -31,10 +29,11 @@ class SumNumbersTest {
         int result2 = sumNumbers.sumNumbers(input2);
         int result3 = sumNumbers.sumNumbers(input3);
 
-        assertEquals(0, result);
-        assertEquals(0, result2);
-        assertEquals(0, result3);
-
+        assertAll("return 0 if int array is less than three digits long",
+                () -> assertEquals(0, result),
+                () -> assertEquals(0, result2),
+                () -> assertEquals(0, result3)
+                );
     }
     @Test
     @DisplayName("return sum excluding lowest and highest element in the int array")
