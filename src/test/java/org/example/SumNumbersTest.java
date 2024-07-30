@@ -21,7 +21,7 @@ class SumNumbersTest {
 
     @Test
     @DisplayName("return 0 if int array is less than three digits long")
-    void sumNumbers() {
+    void testSumNumbers() {
 
         input = new int[]{1, 2};
         input2 = new int[]{1};
@@ -35,5 +35,18 @@ class SumNumbersTest {
         assertEquals(0, result2);
         assertEquals(0, result3);
 
+    }
+    @Test
+    @DisplayName("return sum excluding lowest and highest element in the int array")
+    void test2SumNumbers() {
+        //Arrange
+        input = new int[]{1, 2, 3, 4, 5, 8, 11};
+        input2 = new int[]{5, 2, 6, 10, 22 };
+        //Act
+        int result = sumNumbers.sumNumbers(input);
+        int result2 = sumNumbers.sumNumbers(input2);
+        //Assert
+        assertEquals(22, result);
+        assertEquals(21, result2);
     }
 }
